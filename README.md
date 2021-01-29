@@ -20,3 +20,9 @@
 - [X] Web UI 구현(Spring Boot)
  
 
+## Run
+### Dijkstra
+<img src="https://user-images.githubusercontent.com/46081831/106315187-3e100180-62ae-11eb-9851-f42051bfbd63.gif">
+
+### SPFA
+<img src="https://user-images.githubusercontent.com/46081831/106315196-410af200-62ae-11eb-91ae-388e4629206f.gif">
