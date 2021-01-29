@@ -26,9 +26,9 @@ public class MetroController {
 		String[] devArr = dev.split("_");
 		String result = "";
 		
-		String PYTHON_PATH = "C:\\Users\\jeomn\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe";
-		String PATH_TO_SCRIPT = "C:\\Users\\jeomn\\sts_workspace\\MetroRoute\\src\\main\\resources\\static\\";
-		if (devArr[0].equals("Jisoon")) {
+		String PYTHON_PATH = "User's Python path";
+		String PATH_TO_SCRIPT = "User's STS project PATH"+"MetroRoute\\src\\main\\resources\\static\\";
+		if (devArr[0].equals("developer1")) {
 			if (devArr[1].equals("Dijkstra")) {
 				System.out.println(devArr[1]);
 			} else {
