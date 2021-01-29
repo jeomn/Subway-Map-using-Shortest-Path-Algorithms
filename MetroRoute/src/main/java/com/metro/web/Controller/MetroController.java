@@ -25,6 +25,7 @@ public class MetroController {
 		String result = "";
 		
 		//Set Your Path
+		//If you want to use Anaconda Python Path, you can use it. But in that case, you should Change set_SubwayRoute.py
 		String PYTHON_PATH = "User's Python Path" or "python"; //The both works, so you can choose one.
 		String PATH_TO_SCRIPT = "User's STS worspace Path" +"\\MetroRoute\\src\\main\\resources\\static\\";
 		
