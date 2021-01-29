@@ -66,14 +66,11 @@ def setTransferRoute(station_dic, file_transfer):
 
 def main():
     station_dictionary = {}
-    file_station = pd.read_excel("C:\\Users\\jeomn\\sts_workspace\\MetroRoute\\src\\main\\resources\\static\\SeoulMetro_StationSpacing.xlsx", engine='openpyxl')
-    file_transfer = pd.read_excel("C:\\Users\\jeomn\\sts_workspace\\MetroRoute\\src\\main\\resources\\static\\SeoulMetro_TransferStation_Distance_and_NecessaryTime.xlsx", engine='openpyxl')
+    file_station = pd.read_excel("User's STS project Path"+"MetroRoute\\src\\main\\resources\\static\\SeoulMetro_StationSpacing.xlsx", engine='openpyxl')
+    file_transfer = pd.read_excel("User's STS project Path"+"MetroRoute\\src\\main\\resources\\static\\SeoulMetro_TransferStation_Distance_and_NecessaryTime.xlsx", engine='openpyxl')
 
     station_dictionary = setDefaultRoute(station_dictionary, file_station)
     station_dictionary = setTransferRoute(station_dictionary, file_transfer)
-
-#    for i in station_dictionary:
-#        print(i, station_dictionary[i])
 
     return station_dictionary
 
