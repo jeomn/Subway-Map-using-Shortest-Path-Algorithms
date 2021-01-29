@@ -64,17 +64,16 @@
 		  			<th colspan="2">
 		  				<select class="form-select" name="dev">
 						    <option selected>개발자/알고리즘</option>
-						    <option value="Jisoon_Dijkstra">이지순/다익스트라</option>
-						    <option value="Jisoon_Floyd">이지순/플로이드-워셜</option>
-						    <option value="Jimin_Dijkstra">정지민/다익스트라</option>
-						    <option value="Jimin_SPFA">정지민/SPFA</option>
+						    <option value="developer1_Dijkstra">개발자1/다익스트라</option>
+						    <option value="developer1_Floyd">개발자1/플로이드-워셜</option>
+						    <option value="developer2_Dijkstra">개발자2/다익스트라</option>
+						    <option value="developer2_SPFA">개발자2/SPFA</option>
 						</select>						
 		  			</th>
 				</tr>
 				<tr>
 					<th colspan="3">
 						<button type="submit" class="btn btn-primary">확인</button>
-						<!-- <input type="submit" value="확인"> -->
 					</th>
 				</tr>
 				
