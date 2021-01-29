@@ -24,8 +24,11 @@ public class MetroController {
 		String[] devArr = dev.split("_");
 		String result = "";
 		
-		String PYTHON_PATH = "User's Python Path";
+		//Set Your Path
+		String PYTHON_PATH = "User's Python Path" or "python"; //The both works, so you can choose one.
 		String PATH_TO_SCRIPT = "User's STS worspace Path" +"\\MetroRoute\\src\\main\\resources\\static\\";
+		
+		
 		if (devArr[0].equals("dev1")) {
 			if (devArr[1].equals("Dijkstra")) {
 				System.out.println(devArr[1]);
