@@ -2,13 +2,10 @@ import pandas as pd
 
 #기본역에 이전역, 다음역 가중치를 추가하여 지하철 노선도 그래프 생성(Dictionary)
 def setDefaultRoute(station_dic, file_station):
-    #If you want to use Anaconda Python path, you must edit '-1' in line 7, and also add '-1' in line 12, 23, 30
-    #Like this => for i in range(0, len(file_station)):
     for i in range(0, len(file_station)-1):
         station = file_station.loc[i]
         file_size = len(file_station)
         #첫역/마지막 역이 아닌 경우
-        #i != file_size-1
         if i != file_size and station['누계(km)'] != 0 and file_station.loc[i+1]['누계(km)'] != 0:
             # 같은 호선일 경우 이전역 설정
             if station['호선'] == file_station.loc[i - 1]['호선']:
@@ -19,14 +16,12 @@ def setDefaultRoute(station_dic, file_station):
                 next_station = file_station.loc[i + 1]
                 next_name = next_station['호선'][:1] + next_station['역명']
         #첫역인 경우
-        #i != file_size-1
         elif i != file_size and station['누계(km)'] == 0:
             # 같은 호선일 경우 다음역 설정
             if station['호선'] == file_station.loc[i + 1]['호선']:
                 next_station = file_station.loc[i + 1]
                 next_name = next_station['호선'][:1] + next_station['역명']
         #마지막 역인 경우
-        #i != file_size-1
         elif i == file_size or file_station.loc[i+1]['누계(km)'] != 0:
             # 같은 호선일 경우 이전역 설정
             if station['호선'] == file_station.loc[i - 1]['호선']:
@@ -70,8 +65,6 @@ def setTransferRoute(station_dic, file_transfer):
 
 def main():
     station_dictionary = {}
-    #If you want to use Anaconda Python Path, you must delete ", engine='openpyxl'"
-    #Like this => file_station = pd.read_excel("User's STS worspace Path"+"MetroRoute\\src\\main\\resources\\static\\SeoulMetro_StationSpacing.xlsx")
     file_station = pd.read_excel("User's STS worspace Path"+"MetroRoute\\src\\main\\resources\\static\\SeoulMetro_StationSpacing.xlsx", engine='openpyxl')
     file_transfer = pd.read_excel("User's STS worspace Path"+"MetroRoute\\src\\main\\resources\\static\\SeoulMetro_TransferStation_Distance_and_NecessaryTime.xlsx", engine='openpyxl')
 
