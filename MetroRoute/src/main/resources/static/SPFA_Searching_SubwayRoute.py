@@ -55,8 +55,10 @@ if __name__=="__main__":
     for i in range(1, len(final_route)):
         if final_route[i-1] == final_route[i]:
             transfer_station.append(final_route[i-1])
-            final_route.insert(i-1, final_route[i-1] +"|환승|"+final_route[i])
-            del final_route[i]
+            final_route[i-1] = final_route[i-1] +"|환승|"+final_route[i])
+            final_route[i] = ''
+    while '' in final_route:
+        final_route.remove('')
     route = ' > '.join(final_route)
 
     result = str(route+'a'+distance+'a'+ ', '.join(transfer_station))
