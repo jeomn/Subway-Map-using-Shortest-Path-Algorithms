@@ -26,20 +26,49 @@ public class MetroController {
 		
 		//Set Your Path
 		//If you want to use Anaconda Python Path, you can use it. But in that case, you should Change set_SubwayRoute.py
-		String PYTHON_PATH = "User's Python Path" or "python"; //The both works, so you can choose one.
-		String PATH_TO_SCRIPT = "User's STS worspace Path" +"\\MetroRoute\\src\\main\\resources\\static\\";
+		//String PYTHON_PATH = "User's Python Path" or "python"; //The both works, so you can choose one.
+		//String PATH_TO_SCRIPT = "User's STS worspace Path" +"\\MetroRoute\\src\\main\\resources\\static\\";
+		
+		//If you use Anaconda Python environmnet
+		//Developer1's codes are only work in Anaconda Python environment
+		String PYTHON_PATH = "User's Anaconda Python Path";
+		String PATH_TO_SCRIPT = "User's STS worspace Path" +"\\MetroRoute\\src\\main\\resources\\static\\pyAnaconda\\";
 		
 		
 		if (devArr[0].equals("dev1")) {
 			if (devArr[1].equals("Dijkstra")) {
-				System.out.println(devArr[1]);
+				ProcessBuilder pb = new ProcessBuilder(PYTHON_PATH, PATH_TO_SCRIPT+"Developer1\\Dijkstra_Subway.py", cmd);
+				Process process;
+				
+				try {
+					process = pb.start();
+					BufferedReader bfr = new BufferedReader(new InputStreamReader(process.getInputStream()));
+					result = "";
+					result = bfr.readLine();		
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			} else {
-				System.out.println(devArr[1]);
+				ProcessBuilder pb = new ProcessBuilder(PYTHON_PATH, PATH_TO_SCRIPT+"Developer1\\FloydWarshall_Subway.py", cmd);
+				Process process;
+				
+				try {
+					process = pb.start();
+					BufferedReader bfr = new BufferedReader(new InputStreamReader(process.getInputStream()));
+					result = "";
+					result = bfr.readLine();		
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 		else {
 			if (devArr[1].equals("Dijkstra")) {
-				ProcessBuilder pb = new ProcessBuilder(PYTHON_PATH, PATH_TO_SCRIPT+"Dijkstra_Searching_SubwayRoute.py", cmd);
+				//If you do not want work in Anaconda, change PYTHON_PATH, PATH_TO_SCRIPT, and additional python code path
+				//"Developer2\\Dijkstra_Searchin_SubwayRoute.py" to "Dijkstra_Searching_Subway.py"
+				ProcessBuilder pb = new ProcessBuilder(PYTHON_PATH, PATH_TO_SCRIPT+"Developer2\\Dijkstra_Searching_SubwayRoute.py", cmd);
 				Process process;
 				
 				try {
@@ -53,7 +82,9 @@ public class MetroController {
 				}
 			}
 			else {
-				ProcessBuilder pb = new ProcessBuilder(PYTHON_PATH, PATH_TO_SCRIPT+"SPFA_Searching_SubwayRoute.py", cmd);
+				//If you want work not in Anaconda, change PYTHON_PATH, PATH_TO_SCRIPT, and python code path
+				//"Developer2\\SPFA_Searchin_SubwayRoute.py" to "SPFA_Searching_Subway.py"
+				ProcessBuilder pb = new ProcessBuilder(PYTHON_PATH, PATH_TO_SCRIPT+"Developer2\\SPFA_Searching_SubwayRoute.py", cmd);
 				Process process;
 				
 				try {
