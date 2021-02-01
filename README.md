@@ -18,7 +18,15 @@
 
 #### SpringBoot & UI(jsp)     
 - [X] Web UI 구현(Spring Boot)
- 
+<Br>
+<Br>
+<Br>
+
+## Warnings
+Developer1's codes are work only Anaconda Python environment. <Br>
+So if you don't want Anaconda, you can only use Developer2's function. <Br>
+<Br>
+<Br>
 
 ## Run
 ### Dijkstra
