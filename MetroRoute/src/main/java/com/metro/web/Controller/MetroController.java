@@ -25,11 +25,12 @@ public class MetroController {
 		String result = "";
 		
 		//Set Your Path
-		//If you want to use Anaconda Python Path, you can use it. But in that case, you should Change set_SubwayRoute.py
+		//If you "don't want" to use Anaconda Python Path, you can use it. But in that case, you should Change set_SubwayRoute.py
+		//Also, you should change developer2's python code(line 72, line 88)
 		//String PYTHON_PATH = "User's Python Path" or "python"; //The both works, so you can choose one.
 		//String PATH_TO_SCRIPT = "User's STS worspace Path" +"\\MetroRoute\\src\\main\\resources\\static\\";
 		
-		//If you use Anaconda Python environmnet
+		//If you "want" to use Anaconda Python environmnet
 		//Developer1's codes are only work in Anaconda Python environment
 		String PYTHON_PATH = "User's Anaconda Python Path";
 		String PATH_TO_SCRIPT = "User's STS worspace Path" +"\\MetroRoute\\src\\main\\resources\\static\\pyAnaconda\\";
@@ -66,7 +67,7 @@ public class MetroController {
 		}
 		else {
 			if (devArr[1].equals("Dijkstra")) {
-				//If you do not want work in Anaconda, change PYTHON_PATH, PATH_TO_SCRIPT, and additional python code path
+				//If you "do not want" work in Anaconda, change PYTHON_PATH, PATH_TO_SCRIPT, and additional python code path
 				//"Developer2\\Dijkstra_Searchin_SubwayRoute.py" to "Dijkstra_Searching_Subway.py"
 				ProcessBuilder pb = new ProcessBuilder(PYTHON_PATH, PATH_TO_SCRIPT+"Developer2\\Dijkstra_Searching_SubwayRoute.py", cmd);
 				Process process;
